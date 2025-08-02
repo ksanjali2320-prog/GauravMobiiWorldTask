@@ -15,7 +15,7 @@
         android:theme="@style/Theme.GauravMobiiWorldTask"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.repository.MainActivity"
+            android:name=".presentation.ui.repository.RepoScreen"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GauravMobiiWorldTask">

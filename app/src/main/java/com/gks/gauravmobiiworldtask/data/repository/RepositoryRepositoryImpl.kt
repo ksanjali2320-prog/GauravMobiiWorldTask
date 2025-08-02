@@ -1,7 +1,6 @@
 package com.gks.gauravmobiiworldtask.data.repository
 
 import com.gks.gauravmobiiworldtask.data.local.dao.RepositoryDao
-import com.gks.gauravmobiiworldtask.data.local.entity.RepositoryEntity
 import com.gks.gauravmobiiworldtask.data.local.entity.toDomain
 import com.gks.gauravmobiiworldtask.data.local.entity.toEntity
 import com.gks.gauravmobiiworldtask.data.remote.api.GithubApi
@@ -31,5 +30,9 @@ class RepositoryRepositoryImpl @Inject constructor(
         return dao.getRepositoryById(id)
             .first()
             .toDomain()
+    }
+
+    override suspend fun updateBookMarkStatus(id: Int, isBookmarked: Boolean) {
+        dao.updateBookMarkStatus(id, isBookmarked)
     }
 }

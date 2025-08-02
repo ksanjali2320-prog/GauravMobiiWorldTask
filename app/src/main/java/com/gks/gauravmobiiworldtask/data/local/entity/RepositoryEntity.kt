@@ -17,15 +17,16 @@ data class RepositoryEntity(
     val description: String?,
     val fork: Boolean,
     val url: String,
-    val stargazers_count: Int
+    val stargazers_count: Int,
+    val addToBookMark: Boolean = false
 )
 
 fun Repository.toEntity(): RepositoryEntity = RepositoryEntity(
-    id, name, fullName, owner.login, owner.id, owner.avatarUrl, htmlUrl, description, fork, url,stargazers_count
+    id, name, fullName, owner.login, owner.id, owner.avatarUrl, htmlUrl, description, fork, url,stargazers_count,addToBookMark
 )
 
 fun RepositoryEntity.toDomain(): Repository = Repository(
     id, name, fullName,
     Owner(login, ownerId, avatarUrl),
-    htmlUrl, description, fork, url,stargazers_count
+    htmlUrl, description, fork, url,stargazers_count,addToBookMark
 )

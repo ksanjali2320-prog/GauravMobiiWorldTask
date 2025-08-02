@@ -9,7 +9,8 @@ data class Repository(
     val description: String?,
     val fork: Boolean,
     val url: String,
-    val stargazers_count: Int
+    val stargazers_count: Int,
+    var addToBookMark: Boolean = false
 )
 
 data class Owner(

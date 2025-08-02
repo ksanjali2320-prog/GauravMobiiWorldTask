@@ -20,4 +20,7 @@ interface RepositoryDao {
 
     @Query("SELECT * FROM repositories WHERE id = :userId")
     fun getRepositoryById(userId: Int): Flow<RepositoryEntity>
+
+    @Query("UPDATE repositories SET addToBookMark = :isBookmarked WHERE id = :repoId")
+    suspend fun updateBookMarkStatus(repoId: Int, isBookmarked: Boolean)
 }
